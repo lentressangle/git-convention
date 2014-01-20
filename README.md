@@ -13,8 +13,13 @@
 
 
  Good :)
+ 
+  - https://github.com/reenhanced/gitreflow ? (to study)
 
   - Rebase during feature development.
+
+    With a `git rebase`, or `git pull --rebase`, you simply replay those commits on top of the new head. Now, if you push, you have linear history, rather than a divergence/merge.
+  
 
   - Explicit (non fast-forward) merge when done.
 - Release are tracked by tag
@@ -73,4 +78,5 @@ Bad :(
   - http://blogs.atlassian.com/2014/01/simple-git-workflow-simple/
   - https://gist.github.com/jbenet/ee6c9ac48068889b0912
   - https://github.com/blog/1124-how-we-use-pull-requests-to-build-github
+  - http://scottchacon.com/2011/08/31/github-flow.html
   
