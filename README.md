@@ -34,6 +34,7 @@ Bad :(
 
 - Don't rebase people's branch until it's ready to be merged
 - Don't rebase collaborative branch
+- Avoid to create a new branch from another development branch. The priority should be to merge the first one onto master before creating the second.
 
 ## GitHub notes
 
