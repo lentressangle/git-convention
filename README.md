@@ -1,6 +1,6 @@
 # iAdvize Git Convention
 
-We use a Feature Branch Workflow.
+We use a Feature Branch Workflow similar to the [Github Flow](https://guides.github.com/introduction/flow/index.html).
 
 ## <a name='TOC'>Table of Contents</a>
 
@@ -33,7 +33,7 @@ Good :)
 Bad :(
 
 - Don't rebase people's branch until it's ready to be merged
-- Don't rebase collaborative branch
+- Don't rebase collaborative branch without warning the other people working on it.
 - Avoid to create a new branch from another development branch. The priority should be to merge the first one onto master before creating the second.
 
 ## GitHub notes
