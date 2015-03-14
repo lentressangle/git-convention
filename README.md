@@ -30,7 +30,7 @@ You should always create a new branch when working on a new feature.
   - **develop**: Used as preproduction branch
   - **ABC-XXX-Description**: Feature branches
 
-## <a name='start-feature'>Start feature</a>
+## <a name='start-feature'>Start a feature</a>
 
 ```bash
 # Fetch commits from remote
@@ -95,6 +95,19 @@ Commit message must be readable and understandable.
 
 ## <a name='submission-guidelines'>Submission guidelines</a>
 
+- Create a PR (Pull Request) on github
+- Use a title like: `ABC-XXX Some awesome description`
+- Use a template for PR description:
+
+    ```
+        #### What's this PR do?
+        > Ticket link [#XXXX](url)
+
+        Little description
+        #### PR Dependencies
+        #XXX
+        #XXX
+    ```
 
 ## <a name='credits'>Credits</a>
 
