@@ -26,28 +26,25 @@ Pull Requests are a great way to start a conversation of a feature, so start one
 
 You should always create a new branch when working on a new feature.
 
-    - **master**:
-        Should be exactly the same as production.
-    - **develop**:
-        Used as preproduction branch
-    - **ABC-XXX-Description**:
-        Feature branches
+  - **master**: Should be exactly the same as production.
+  - **develop**: Used as preproduction branch
+  - **ABC-XXX-Description**: Feature branches
 
 ## <a name='start-feature'>Start feature</a>
 
 ```bash
-// Fetch commits from remote
+# Fetch commits from remote
 $ git fetch origin
 
-// Create feature branch
+# Create feature branch
 $ git checkout -b ABC-XXX-Description origin/develop
 
-// Push your branch early to get feedback
-// Use `rebase` if you need to fresh up your branch
-// Follow convention for commit message
+# Push your branch early to get feedback
+# Use `rebase` if you need to fresh up your branch
+# Follow convention for commit message
 $ git push -u origin ABC-XXX-Description
 
-// When you're ready, create a pull request following convention
+# When you're ready, create a pull request following convention
 ```
 
 ## <a name='commit-message'>Commit message conventions</a>
@@ -56,7 +53,7 @@ Commit message must be readable and understandable.
 
 ### Commit message Format
 
-```
+```php
 // Simple
 <type>(<scope...>): <Description>
 
@@ -76,20 +73,25 @@ Commit message must be readable and understandable.
 ### Type
 
 - **feature**: `feat(ApiController): Add post method for feature A`
-    Should represent a feature commit
+    > Should represent a feature commit
+
 - **fix**: `fix(MessageService): fix wrong status code on GET request`
-    Should represent a bug fix
+    > Should represent a bug fix
+
 - **style**: `style(ApiController): :lipstick:`
-    Changes that don't affect meaning of the code ony white-space, formatting
-- **documentation**: `doc(ApiController, MessageService): add documentation in controller + Reword class description for
-  Service`
-    Should represent a documentation changes
+    > Changes that don't affect meaning of the code ony white-space, formatting
+
+- **documentation**: `doc(ApiController, MessageService): add documentation in controller + Reword class description for  Service`
+    > Should represent a documentation changes
+
 - **refactor**: `refacto(MessageService): change message generation process`
-    A change for better readablilty (Don't add feature or fix bug)
+    > A change for better readablilty (Don't add feature or fix bug)
+
 - **performance**: `perf(UrlGenerator): Replace libA for libB`
-    Should represent a performance improvment
+    > Should represent a performance improvment
+
 - **test**: `test(MessageService): Implement message service test for GET request`
-    Should represent a test implementation
+    > Should represent a test implementation
 
 ## <a name='submission-guidelines'>Submission guidelines</a>
 
