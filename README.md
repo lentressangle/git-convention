@@ -3,7 +3,6 @@
 ## <a name='TOC'>Table of Contents</a>
 
   1. [Rules](#rules)
-  1. [Workflow](#workflow)
   1. [Branching](#branching)
   1. [Start a feature](#start-feature)
   1. [Commit message](#commit-message)
@@ -92,6 +91,17 @@ Commit message must be readable and understandable.
 
 - **test**: `test(MessageService): Implement message service test for GET request`
     > Should represent a test implementation
+
+##### Example
+
+```text
+feat(RestApiController): add constraint to email field
+
+Now, each request must provide an email to be correctly executed.
+If no email is provide, a 400 status code is returned.
+
+ABC-XXX #closed
+```
 
 ## <a name='submission-guidelines'>Submission guidelines</a>
 
