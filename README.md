@@ -7,6 +7,7 @@
   1. [Start a feature](#start-feature)
   1. [Commit message](#commit-message)
   1. [Submission guidelines](#submission-guidelines)
+  1. [Tips and Tricks](#tips-tricks)
   1. [Credits](#credits)
 
 ## <a name='rules'>Rules</a>
@@ -95,10 +96,9 @@ Commit message must be readable and understandable.
 ##### Example
 
 ```text
-feat(RestApiController): add constraint to email field
+feat(RestApiController, Route): add constraint to user profile
 
-Now, each request must provide an email to be correctly executed.
-If no email is provide, a 400 status code is returned.
+Now, each request must provided an email to be correctly executed.
 
 ABC-XXX #closed
 ```
@@ -118,6 +118,43 @@ ABC-XXX #closed
         #XXX
         #XXX
     ```
+
+## <a name='tips-tricks'>Tips and tricks</a>
+
+### Select hunks for better commit
+
+Sometime, in development process you fix bug when creating feature. And this bug fix isn't really a part of the feature.
+
+```bash
+# For example you made changes on ApiController.php
+# One for the feature and one for a bug fix
+$ git status
+    modified:   ApiController.php
+
+# use git commit -pm to select which part to commit
+$ git commit -pm 'fix(ApiController): fix a hilarious bug'
+
+You can use many options on evey hunk
+
+y - stage this hunk
+n - do not stage this hunk
+q - quit; do not stage this hunk or any of the remaining ones
+a - stage this hunk and all later hunks in the file
+d - do not stage this hunk or any of the later hunks in the file
+g - select a hunk to go to
+/ - search for a hunk matching the given regex
+j - leave this hunk undecided, see next undecided hunk
+J - leave this hunk undecided, see next hunk
+k - leave this hunk undecided, see previous undecided hunk
+K - leave this hunk undecided, see previous hunk
+s - split the current hunk into smaller hunks
+e - manually edit the current hunk
+
+# You can now commit your feature
+# Now you can cherry-pick the bug fix to share it with other branch
+# without sending feature part
+
+```
 
 ## <a name='credits'>Credits</a>
 
