@@ -29,6 +29,8 @@ You should always create a new branch when working on a new feature.
   - **master**: Should be exactly the same as production.
   - **develop**: Used as preproduction branch
   - **ABC-XXX-Description**: Feature branches
+        > ABC-XXX is the issue identifier (ex: MCP-4332)
+        > Description is a short introduction about the feature (MCP-4332-addSomeCrazyFeature)
 
 ## <a name='start-feature'>Start a feature</a>
 
