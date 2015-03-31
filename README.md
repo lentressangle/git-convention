@@ -136,7 +136,7 @@ $ git status
 # use git commit -pm to select which part to commit
 $ git commit -pm 'fix(ApiController): fix a hilarious bug'
 
-You can use many options on evey hunk
+You can use many options on every hunk
 
 y - stage this hunk
 n - do not stage this hunk
