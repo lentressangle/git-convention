@@ -81,7 +81,7 @@ Commit message must be readable and understandable.
     > Should represent a bug fix
 
 - **style**: `style(ApiController): :lipstick:`
-    > Changes that don't affect meaning of the code ony white-space, formatting
+    > Changes that don't affect meaning of the code only white-space, formatting
 
 - **documentation**: `doc(ApiController, MessageService): add documentation in controller + Reword class description for  Service`
     > Should represent a documentation changes
