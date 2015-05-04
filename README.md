@@ -118,7 +118,6 @@ ABC-XXX #closed
         Little description
         #### PR Dependencies
         #XXX
-        #XXX
     ```
 ### Bookmarklet
 ```javascript
