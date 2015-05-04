@@ -27,10 +27,9 @@ Pull Requests are a great way to start a conversation of a feature, so start one
 You should always create a new branch when working on a new feature.
 
   - **master**: Should be exactly the same as production.
-  - **develop**: Used as preproduction branch
   - **ABC-XXX-Description**: Feature branches
-        > ABC-XXX is the issue identifier (ex: MCP-4332)
-        > Description is a short introduction about the feature (MCP-4332-addSomeCrazyFeature)
+        > ABC-XXX is the issue identifier (ex: IDZ-4332)
+        > Description is a short introduction about the feature (IDZ-4332-addSomeCrazyFeature)
 
 ## <a name='start-feature'>Start a feature</a>
 
@@ -39,12 +38,12 @@ You should always create a new branch when working on a new feature.
 $ git fetch origin
 
 # Create feature branch
-$ git checkout -b ABC-XXX-Description origin/develop
+$ git checkout -b ABC-XXX-Description origin/master
 
 # Push your branch early to get feedback
 # Use `rebase` if you need to fresh up your branch
 # Follow convention for commit message
-$ git push -u origin ABC-XXX-Description
+$ git push -u origin IDZ-XXX-Description
 
 # When you're ready, create a pull request following convention
 ```
@@ -74,6 +73,16 @@ Commit message must be readable and understandable.
 
 ### Type
 
+##### Example
+
+```text
+feat(RestApiController, Route): add constraint to user profile
+
+Now, each request must provided an email to be correctly executed.
+
+ABC-XXX #closed
+```
+
 - **feature**: `feat(ApiController): Add post method for feature A`
     > Should represent a feature commit
 
@@ -95,15 +104,6 @@ Commit message must be readable and understandable.
 - **test**: `test(MessageService): Implement message service test for GET request`
     > Should represent a test implementation
 
-##### Example
-
-```text
-feat(RestApiController, Route): add constraint to user profile
-
-Now, each request must provided an email to be correctly executed.
-
-ABC-XXX #closed
-```
 
 ## <a name='submission-guidelines'>Submission guidelines</a>
 
@@ -112,7 +112,7 @@ ABC-XXX #closed
 - Use a template for PR description:
 
     ```
-        #### What's this PR do?
+        #### What's this PR purpose?
         > Ticket link [#XXXX](url)
 
         Little description
@@ -120,6 +120,10 @@ ABC-XXX #closed
         #XXX
         #XXX
     ```
+### Bookmarklet
+```javascript
+javascript:(function() {var e = document.getElementById('pull_request_body');if (e) {e.value += '#### What\'s this PR pupose?\n> Ticket link []()\n\n DESCRIPTION\n#### PR Dependencies\n#XXX\n#XXX';}})();
+```
 
 ## <a name='tips-tricks'>Tips and tricks</a>
 
