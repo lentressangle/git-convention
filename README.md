@@ -92,10 +92,10 @@ ABC-XXX #closed
 - **style**: `style(ApiController): :lipstick:`
     > Changes that don't affect meaning of the code only white-space, formatting
 
-- **documentation**: `doc(ApiController, MessageService): add documentation in controller + Reword class description for  Service`
+- **documentation**: `docs(ApiController, MessageService): add documentation in controller + Reword class description for  Service`
     > Should represent a documentation changes
 
-- **refactor**: `refacto(MessageService): change message generation process`
+- **refactor**: `refactor(MessageService): change message generation process`
     > A change for better readablilty (Don't add feature or fix bug)
 
 - **performance**: `perf(UrlGenerator): Replace libA for libB`
