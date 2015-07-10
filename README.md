@@ -28,8 +28,8 @@ You must create a new branch when working on a new feature.
 
   - **master**: The production branch. Must always be stable and deployable.
   - **ABC-XXX-Description**: Feature branches
-      > ABC-XXX is the issue identifier (ex: IDZ-4332)
-      > Description is a short introduction about the feature (IDZ-4332-addSomeCrazyFeature)
+    - *ABC-XXX is the issue identifier (ex: IDZ-4332)*
+    - *Description is a short introduction about the feature (IDZ-4332-addSomeCrazyFeature)*
 
 ## <a name='start-feature'>Start a feature</a>
 
