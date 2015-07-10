@@ -24,12 +24,12 @@ Pull Requests are a great way to start a conversation of a feature, so start one
 
 ## <a name='branching'>Branching</a>
 
-You should always create a new branch when working on a new feature.
+You must create a new branch when working on a new feature.
 
-  - **master**: Should be exactly the same as production.
+  - **master**: The production branch. Must always be stable and deployable.
   - **ABC-XXX-Description**: Feature branches
-        > ABC-XXX is the issue identifier (ex: IDZ-4332)
-        > Description is a short introduction about the feature (IDZ-4332-addSomeCrazyFeature)
+      > ABC-XXX is the issue identifier (ex: IDZ-4332)
+      > Description is a short introduction about the feature (IDZ-4332-addSomeCrazyFeature)
 
 ## <a name='start-feature'>Start a feature</a>
 
