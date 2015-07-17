@@ -104,8 +104,8 @@ ABC-XXX #closed
 - **test**: `test(MessageService): Implement message service test for GET request`
     > Should represent a test implementation
 
-- **chore**: `chore(Dockerfile): Change node version to 0.12`
-    > Changes to the build process or auxiliary tools and libraries such as documentation generation
+- **misc**: `misc(Dockerfile): Change node version to 0.12`
+    > Changes that didn't match any other categories
 
 
 ## <a name='submission-guidelines'>Submission guidelines</a>
