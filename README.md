@@ -3,7 +3,11 @@
 ## <a name='TOC'>Table of Contents</a>
 
   1. [Rules](#rules)
-  1. [Workflow](#workflow)
+  1. [Branching](#branching)
+  1. [Start a feature](#start-feature)
+  1. [Commit message](#commit-message)
+  1. [Submission guidelines](#submission-guidelines)
+  1. [Tips and Tricks](#tips-tricks)
   1. [Credits](#credits)
 
 ## <a name='rules'>Rules</a>
@@ -15,56 +19,154 @@
   - Explicit (non fast-forward) merge when done.
 
   - Open a Pull Request as early as possible
-  
+
 Pull Requests are a great way to start a conversation of a feature, so start one as soon as possible - even before you are finished with the code. The team can comment on the feature as it evolves, instead of providing all their feedback at the very end.
 
+## <a name='branching'>Branching</a>
 
+You must create a new branch when working on a new feature.
 
-## <a name='workflow'>Workflow</a>
+  - **master**: The production branch. Must always be stable and deployable.
+  - **ABC-XXX-Description**: Feature branches
+    - *ABC-XXX is the issue identifier (ex: IDZ-4332)*
+    - *Description is a short introduction about the feature (IDZ-4332-addSomeCrazyFeature)*
 
-  1. Pull down the latest changes from `master`
+## <a name='start-feature'>Start a feature</a>
 
-```sh
-git fetch origin
+```bash
+# Fetch commits from remote
+$ git fetch origin
+
+# Create feature branch
+$ git checkout -b ABC-XXX-Description origin/master
+
+# Push your branch early to get feedback
+# Use `rebase` if you need to fresh up your branch
+# Follow convention for commit message
+$ git push -u origin IDZ-XXX-Description
+
+# When you're ready, create a pull request following convention
 ```
 
-  2. Create a new branch
+## <a name='commit-message'>Commit message conventions</a>
 
-```sh
-git checkout -b feat-myAwesomeFeature-1234 origin/master
+Commit message must be readable and understandable.
+
+### Commit message Format
+
+```php
+// Simple
+<type>(<scope...>): <Description>
+
+// Simple with issue
+<type>(<scope...>): <Description>
+#ABC-XXX
+
+// Full description
+<type>(<scope...>): <Short description>
+
+<Explain more...>
+
+#ABC-XXX
+
 ```
 
-Branch name structure is composed of 3 parts separated by `-`:
+### Type
 
-  - Type of the changes: `feat` for a new feature or `fix` for a bug-fix
-  - Short but explicit name in camelCase describing the changes
-  - ID of the corresponding JIRA ticket (no need for the `IDZ-` part)
-  
-  3. Work on the feature
+##### Example
 
-  - Commit early, commit often.
-  - Make sure your commits are meaningful.
-  - Do not cluster separate changes together.
+```text
+feat(RestApiController, Route): add constraint to user profile
 
-  4. Use `rebase` when you need to fresh up your branch with the latest changes in `master`
+Now, each request must provided an email to be correctly executed.
 
-
-  
-  5. When ready for feedback push your branch remotely
-
-```sh
-git push -u origin feat-myAwesomeFeature-1234
+ABC-XXX #closed
 ```
-  
-  6. Create a Pull Request via github
-  
-  
-  
-  
+
+- **feature**: `feat(ApiController): Add post method for feature A`
+    > Should represent a feature commit
+
+- **fix**: `fix(MessageService): fix wrong status code on GET request`
+    > Should represent a bug fix
+
+- **style**: `style(ApiController): :lipstick:`
+    > Changes that don't affect meaning of the code only white-space, formatting
+
+- **documentation**: `docs(ApiController, MessageService): add documentation in controller + Reword class description for  Service`
+    > Should represent a documentation changes
+
+- **refactor**: `refactor(MessageService): change message generation process`
+    > A change for better readablilty (Don't add feature or fix bug)
+
+- **performance**: `perf(UrlGenerator): Replace libA for libB`
+    > Should represent a performance improvement
+
+- **test**: `test(MessageService): Implement message service test for GET request`
+    > Should represent a test implementation
+
+- **misc**: `misc(Dockerfile): Change node version to 0.12`
+    > Changes that didn't match any other categories
+
+
+## <a name='submission-guidelines'>Submission guidelines</a>
+
+- Create a PR (Pull Request) on github
+- Use a title like: `ABC-XXX Some awesome description`
+- Use a template for PR description:
+
+    ```
+        #### What's this PR purpose?
+        > Ticket link [#XXXX](url)
+
+        Little description
+        #### PR Dependencies
+        #XXX
+    ```
+### Bookmarklet
+```javascript
+javascript:(function() {var e = document.getElementById('pull_request_body');if (e) {e.value += '#### What\'s this PR pupose?\n> Ticket link []()\n\n DESCRIPTION\n#### PR Dependencies\n#XXX\n#XXX';}})();
+```
+
+## <a name='tips-tricks'>Tips and tricks</a>
+
+### Select hunks for better commit
+
+Sometime, in development process you fix bug when creating feature. And this bug fix isn't really a part of the feature.
+
+```bash
+# For example you made changes on ApiController.php
+# One for the feature and one for a bug fix
+$ git status
+    modified:   ApiController.php
+
+# use git commit -pm to select which part to commit
+$ git commit -pm 'fix(ApiController): fix a hilarious bug'
+
+You can use many options on every hunk
+
+y - stage this hunk
+n - do not stage this hunk
+q - quit; do not stage this hunk or any of the remaining ones
+a - stage this hunk and all later hunks in the file
+d - do not stage this hunk or any of the later hunks in the file
+g - select a hunk to go to
+/ - search for a hunk matching the given regex
+j - leave this hunk undecided, see next undecided hunk
+J - leave this hunk undecided, see next hunk
+k - leave this hunk undecided, see previous undecided hunk
+K - leave this hunk undecided, see previous hunk
+s - split the current hunk into smaller hunks
+e - manually edit the current hunk
+
+# You can now commit your feature
+# Now you can cherry-pick the bug fix to share it with other branch
+# without sending feature part
+
+```
 
 ## <a name='credits'>Credits</a>
 
   - http://blogs.atlassian.com/2014/01/simple-git-workflow-simple/
   - https://gist.github.com/jbenet/ee6c9ac48068889b0912
   - https://github.com/blog/1124-how-we-use-pull-requests-to-build-github
-  
+
