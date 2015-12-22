@@ -1,4 +1,4 @@
-# Naoned Git Convention (Not advize)
+# Naoned Git Convention
 
 ## <a name='TOC'>Table of Contents</a>
 
@@ -6,7 +6,6 @@
   1. [Branching](#branching)
   1. [Start a feature](#start-feature)
   1. [Commit message](#commit-message)
-  1. [Submission guidelines](#submission-guidelines)
   1. [Tips and Tricks](#tips-tricks)
   1. [Credits](#credits)
 
@@ -18,7 +17,7 @@
 # The repo name is in snake-case (dash separator and lowercase)
 <project?>-<techno?>-<name?>-<type>
   ```
-[More information about snake-case](https://en.wikipedia.org/wiki/Snake_case)
+[More information about snake-case](https://en.wikipedia.org/wiki/Snake_case) :snake:
 
 - **Project**: The top level project (upnao, inao, vanao, mediator, naopal, etc...)
 - **Techno**: The techno can be either a language or a framework (php, js, symfony, angular, etc... cf stack)
@@ -59,33 +58,39 @@ naopal-php-blog-module
 
 ## <a name='branching'>Branching</a>
 
-You must create a new branch when working on a new feature.
+You must create a new branch when working on a new feature. 
 
   - **master**: The production branch. Must always be stable and deployable.
-  - **ABC-XXX-Description**: Feature branches
-    - *ABC-XXX is the issue identifier (ex: IDZ-4332)*
-    - *Description is a short introduction about the feature (IDZ-4332-addSomeCrazyFeature)*
+  - **hotfix**: A tempory branch from master to make hotfix
+  - **IterationName**: Specific branch for an iteration
+  - **US_xxxxx**: Where *xxxxx* is the name of the User Story of the iteration 
+  - **develop**: This branch can contains many iterations
+  - **release**: When there are enough iterations in branch 'develop' , pass it on branch 'release' to be checked (before to be put on the master branch)
 
-## <a name='start-feature'>Start a feature</a>
+:warning: All **US_xxxxx** branches must be created in same time from the IterationName branch, because **US_xxxxx** must be independent.
+
+Follow the Git-flow works : 
+
+<img src="http://nvie.com/img/git-model@2x.png" align="center" height="500"/ >
+
+## <a name='start-feature'>Start an iteration</a>
 
 ```bash
 # Fetch commits from remote
 $ git fetch origin
 
-# Create feature branch
-$ git checkout -b ABC-XXX-Description origin/master
+# Create an iteration branch 
+$ git checkout -b IterationName origin/master
 
-# Push your branch early to get feedback
-# Use `rebase` if you need to fresh up your branch
-# Follow convention for commit message
-$ git push -u origin IDZ-XXX-Description
+# Create an new branch for an user story 
+$ git checkout -b US_xxxxxx origin/master
 
 # When you're ready, create a pull request following convention
 ```
 
 ## <a name='commit-message'>Commit message conventions</a>
 
-Commit message must be readable and understandable.
+Commit message must be readable, understandable and write in english.
 
 ### Commit message Format
 
@@ -141,26 +146,16 @@ ABC-XXX #closed
     > Changes that didn't match any other categories
 
 
-## <a name='submission-guidelines'>Submission guidelines</a>
-
-- Create a PR (Pull Request) on github
-- Use a title like: `ABC-XXX Some awesome description`
-- Use a template for PR description:
-
-    ```
-        #### What's this PR purpose?
-        > Ticket link [#XXXX](url)
-
-        Little description
-        #### PR Dependencies
-        #XXX
-    ```
-### Bookmarklet
-```javascript
-javascript:(function() {var e = document.getElementById('pull_request_body');if (e) {e.value += '#### What\'s this PR pupose?\n> Ticket link []()\n\n DESCRIPTION\n#### PR Dependencies\n#XXX\n#XXX';}})();
-```
 
 ## <a name='tips-tricks'>Tips and tricks</a>
+
+
+### Use Gitg :bulb:
+
+[Gitg](https://wiki.gnome.org/Apps/Gitg) is a graphical user interface for git. It aims at being a small,
+fast and convenient tool to visualize the history of git repositories.
+Besides visualization, [gitg](https://wiki.gnome.org/Apps/Gitg) also provides several utilities to manage your
+repository and commit your work.
 
 ### Select hunks for better commit
 
