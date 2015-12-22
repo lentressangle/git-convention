@@ -1,8 +1,8 @@
-# iAdvize Git Convention
+# Naoned Git Convention
 
 ## <a name='TOC'>Table of Contents</a>
 
-  1. [Rules](#rules)
+  1. [Repositories](#repositories)
   1. [Branching](#branching)
   1. [Start a feature](#start-feature)
   1. [Commit message](#commit-message)
@@ -10,17 +10,51 @@
   1. [Tips and Tricks](#tips-tricks)
   1. [Credits](#credits)
 
-## <a name='rules'>Rules</a>
+## <a name='repositories'>Repositories</a>
+### Naming
 
-  - Branche `master` is always production-like and deployable.
+  ```
+# The repo name is in snake-case (dash separator and lowercase)
+<project?>-<techno?>-<name?>-<type>
+  ```
+[More information about snake-case](https://en.wikipedia.org/wiki/Snake_case)
 
-  - Rebase during feature development.
+- **Project**: The top level project (upnao, inao, vanao, mediator, naopal, etc...)
+- **Techno**: The techno can be either a language or a framework (php, js, symfony, angular, etc... cf stack)
+- **Name**: Choose a name with your team but you are free to choose whatever you want
+- **Type**: Main concern of the repo
+  - ***App***: A complete application (meant to disappear in favor of API/client).
+  - ***Library***: A library...
+  - ***API***: An API...
+  - ***Client***: A client for an API. Might be web or native.
+  - ***Cli***: A command line tool.
+  - ***Deploy***: Anything related to deployments (cf exploitation).
+  - ***Convention***: Rules or usage of a technology or guideline.
+  - ***Theme***: A drupal theme
+  - ***Module***: A drupal module
+  - @todo: complete this list based on real life usage
 
-  - Explicit (non fast-forward) merge when done.
+### Examples
+```
+# <project>-<type>
+inao-app
+upnao-api
+mediator-api
+mediator-client
+synchronizer-cli
 
-  - Open a Pull Request as early as possible
+# <project>-<techno>-<type>
+upnao-ng-client
 
-Pull Requests are a great way to start a conversation of a feature, so start one as soon as possible - even before you are finished with the code. The team can comment on the feature as it evolves, instead of providing all their feedback at the very end.
+# <techno>-<type>
+git-convention
+
+# <techno>-<name>-<type>
+php-toolbox-library
+
+# <product>-<techno>-<name>-<type>
+naopal-php-blog-module
+```
 
 ## <a name='branching'>Branching</a>
 
@@ -169,4 +203,3 @@ e - manually edit the current hunk
   - http://blogs.atlassian.com/2014/01/simple-git-workflow-simple/
   - https://gist.github.com/jbenet/ee6c9ac48068889b0912
   - https://github.com/blog/1124-how-we-use-pull-requests-to-build-github
-
