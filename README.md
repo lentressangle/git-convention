@@ -1,4 +1,4 @@
-# Naoned Git Convention
+# Naoned Git Convention (Not advize)
 
 ## <a name='TOC'>Table of Contents</a>
 
@@ -10,6 +10,7 @@
   1. [Tips and Tricks](#tips-tricks)
   1. [Credits](#credits)
 
+**You shall in english write your repositories, commit message and branch names.**
 ## <a name='repositories'>Repositories</a>
 ### Naming
 
@@ -94,16 +95,13 @@ Commit message must be readable and understandable.
 
 // Simple with issue
 <type>(<scope...>): <Description>
-#ABC-XXX
 
 // Full description
 <type>(<scope...>): <Short description>
 
 <Explain more...>
-
-#ABC-XXX
-
 ```
+For more "fun" use [emojis](http://www.emoji-cheat-sheet.com/) :+1:.
 
 ### Type
 
@@ -120,8 +118,9 @@ ABC-XXX #closed
 - **feature**: `feat(ApiController): Add post method for feature A`
     > Should represent a feature commit
 
-- **fix**: `fix(MessageService): fix wrong status code on GET request`
-    > Should represent a bug fix
+- **fix**: `fix(MessageService): fix #12 wrong status code on GET request`
+    > Should represent a bug fix<br>
+    > Must reference an issue ID
 
 - **style**: `style(ApiController): :lipstick:`
     > Changes that don't affect meaning of the code only white-space, formatting
@@ -129,7 +128,7 @@ ABC-XXX #closed
 - **documentation**: `docs(ApiController, MessageService): add documentation in controller + Reword class description for  Service`
     > Should represent a documentation changes
 
-- **refactor**: `refactor(MessageService): change message generation process`
+- **refactor**: `refact(MessageService): change message generation process`
     > A change for better readablilty (Don't add feature or fix bug)
 
 - **performance**: `perf(UrlGenerator): Replace libA for libB`
