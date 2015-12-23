@@ -176,6 +176,18 @@ fast and convenient tool to visualize the history of git repositories.
 Besides visualization, [gitg](https://wiki.gnome.org/Apps/Gitg) also provides several utilities to manage your
 repository and commit your work.
 
+### Use aliases
+To increase your productivity, you can use some bash aliases (works on zsh to) :
+
+```bash
+# Get all history branch more graphically 
+alias gilog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+# Some shortcuts
+alias gidiff='git diff'
+alias gist='git status'
+alias gich='git checkout'
+```
 ### Select hunks for better commit
 
 Sometime, in development process you fix a bug when creating feature. And this bug fix isn't really a part of the feature.
