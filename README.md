@@ -63,7 +63,7 @@ You must create a new branch when working on a new feature.
   - **master**: The production branch. Must always be stable and deployable.
   - **hotfix**: A tempory branch from master to make hotfix
   - **IterationName**: Specific branch for an iteration
-  - **US_xxxxx**: Where *xxxxx* is the name of the User Story of the iteration 
+  - **US-xxxxx**: Where *xxxxx* is the name of the User Story of the iteration 
   - **develop**: This branch can contains many iterations
   - **release**: When there are enough iterations in branch 'develop' , pass it on branch 'release' to be checked (before to be put on the master branch)
 
