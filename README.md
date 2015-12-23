@@ -58,18 +58,25 @@ naopal-php-blog-module
 
 ## <a name='branching'>Branching</a>
 
-You must create a new branch when working on a new feature. 
+You must create a new branch when working on a new feature.
 
-  - **master**: The production branch. Must always be stable and deployable.
-  - **hotfix**: A tempory branch from master to make hotfix
-  - **IterationName**: Specific branch for an iteration
-  - **US_xxxxx**: Where *xxxxx* is the name of the User Story of the iteration 
-  - **develop**: This branch can contains many iterations
-  - **release**: When there are enough iterations in branch 'develop' , pass it on branch 'release' to be checked (before to be put on the master branch)
+  - **master**:
+    > The production branch. Must always be stable and deployable.
+  - **hotfix**:
+    > A temporary branch of master to create hotfixes.
+  - **release**:
+    > When there are enough iterations in branch 'develop', merge it to branch 'release' for test & checks before merging into the master branch.
+  - **develop**:
+    > This branch can contain many iterations.
+  - **IterationName**:
+    > Iteration specific branch.
+  - **US-xxxxx**:
+    > User Story branch where *xxxxx* is the name of the User Story.
 
-:warning: All **US_xxxxx** branches must be created in same time from the IterationName branch, because **US_xxxxx** must be independent.
+:warning: It is important to make User Story branches independent from the Iteration branch so they can be merged independently into develop branch if needed.
+All **US-xxxxx** should therefore be created at the same time from the develop branch or from the `Iteration branch` when it's first created.
 
-Follow the Git-flow works : 
+Follow the Git-flow works :
 
 <img src="http://nvie.com/img/git-model@2x.png" align="center" height="500"/ >
 
@@ -79,13 +86,13 @@ Follow the Git-flow works :
 # Fetch commits from remote
 $ git fetch origin
 
-# Create an iteration branch 
+# Create an iteration branch
 $ git checkout -b IterationName origin/master
 
-# Create an new branch for an user story 
-$ git checkout -b US_xxxxxx origin/master
+# Create an new branch for an user story
+$ git checkout -b US-xxxxxx origin/master
 
-# When you're ready, create a pull request following convention
+# When you're ready, create a pull request following the convention
 ```
 
 ## <a name='commit-message'>Commit message conventions</a>
@@ -159,7 +166,7 @@ repository and commit your work.
 
 ### Select hunks for better commit
 
-Sometime, in development process you fix bug when creating feature. And this bug fix isn't really a part of the feature.
+Sometime, in development process you fix a bug when creating feature. And this bug fix isn't really a part of the feature.
 
 ```bash
 # For example you made changes on ApiController.php
