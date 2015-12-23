@@ -61,16 +61,27 @@ naopal-php-blog-module
 You must create a new branch when working on a new feature.
 
   - **master**:
+
     > The production branch. Must always be stable and deployable.
+
   - **hotfix**:
+
     > A temporary branch of master to create hotfixes.
+
   - **release**:
+
     > When there are enough iterations in branch 'develop', merge it to branch 'release' for test & checks before merging into the master branch.
+
   - **develop**:
+
     > This branch can contain many iterations.
+
   - **iteration-xxxxx**:
+
     > Iteration specific branch.
+
   - **story-xx-yyyyy**:
+  
     > User Story branch where *xx* is the story id and *yyyyy* is a shortname for the story.
 
 :warning: It is important to make User Story branches independent from the Iteration branch so they can be merged independently into develop branch if needed. But if a story needs another story as a requirement, it can be created from the required one.
