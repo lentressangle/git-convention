@@ -68,13 +68,14 @@ You must create a new branch when working on a new feature.
     > When there are enough iterations in branch 'develop', merge it to branch 'release' for test & checks before merging into the master branch.
   - **develop**:
     > This branch can contain many iterations.
-  - **IterationName**:
+  - **iteration-xxxxx**:
     > Iteration specific branch.
-  - **US-xxxxx**:
-    > User Story branch where *xxxxx* is the name of the User Story.
+  - **story-xx-yyyyy**:
+    > User Story branch where *xx* is the story id and *yyyyy* is a shortname for the story.
 
-:warning: It is important to make User Story branches independent from the Iteration branch so they can be merged independently into develop branch if needed.
-All **US-xxxxx** should therefore be created at the same time from the develop branch or from the `Iteration branch` when it's first created.
+:warning: It is important to make User Story branches independent from the Iteration branch so they can be merged independently into develop branch if needed. But if a story needs another story as a requirement, it can be created from the required one.
+
+All **story-xx-yyyyy** should therefore be created at the same time from the develop branch or from the `iteration-xxxxx` branch when it's first created. 
 
 Follow the Git-flow works :
 
@@ -87,10 +88,10 @@ Follow the Git-flow works :
 $ git fetch origin
 
 # Create an iteration branch
-$ git checkout -b IterationName origin/master
+$ git checkout -b iteration-xxxxx origin/master
 
 # Create an new branch for an user story
-$ git checkout -b US-xxxxxx origin/master
+$ git checkout -b story-xx-yyyyy origin/master
 
 # When you're ready, create a pull request following the convention
 ```
